@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Read size of the array
+        if (!sc.hasNextInt()) return;
+        int n = sc.nextInt();
+        
+        // Handle empty or small array edge cases
+        if (n <= 0) return;
+
+        // Initialize min and max with the first element
+        int firstElement = sc.nextInt();
+        int min = firstElement;
+        int max = firstElement;
+
+        // Loop through the remaining N-1 elements
+        for (int i = 1; i < n; i++) {
+            int current = sc.nextInt();
+            
+            if (current < min) {
+                min = current;
+            }
+            if (current > max) {
+                max = current;
+            }
+        }
+
+        // Print result in "min max" format
+        System.out.println(min + " " + max);
+        
+        sc.close();
+    }
+}
